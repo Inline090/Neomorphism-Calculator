@@ -1,0 +1,177 @@
+/* Copied from original app.css to preserve design */
+body {
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: #dedede;
+}
+.title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin: 0;
+}
+.calc-nums {
+  color: #757272;
+  border-radius: 14px;
+  background: #dedede;
+  box-shadow:
+    8px 8px 16px #bdbdbd,
+    -8px -8px 16px #ffffff;
+  width: 60px;
+  height: 60px;
+  border: none;
+  font-size: 24px;
+}
+.calc-nums:active {
+  box-shadow:
+    inset 8px 8px 16px #bdbdbd,
+    inset -8px -8px 16px #ffffff;
+
+  transform: scale(0.97);
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-body-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 16px;
+  justify-content: center;
+}
+#plus {
+  grid-row: span 2;
+  height: auto;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: fit-content;
+  margin: 24px auto;
+  padding: 14px;
+
+  border-radius: 16px;
+  background: #dedede;
+  box-shadow:
+    9px 9px 18px #b6b6b6,
+    -9px -9px 18px #ffffff;
+}
+
+.result-des {
+  width: 320px;
+  height: 120px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: flex-end; /* numbers appear on the right */
+  align-items: center;
+
+  padding-right: 20px;
+  box-sizing: border-box;
+
+  border-radius: 18px;
+  background: #dedede;
+  box-shadow:
+    inset 15px 15px 30px #bfbfbf,
+    inset -15px -15px 30px #fdfdfd;
+}
+
+.output {
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 56px;
+}
+.calculations {
+  margin-top: 10px;
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #757272;
+  padding-right: 10px;
+}
+
+/* Header bar: title left, switch right */
+.header-bar {
+  position: fixed;
+  top: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* push content down so fixed header doesn't overlap */
+body {
+  padding-top: 72px;
+}
+
+/* Dark theme overrides — preserve neomorphic style but with darker colors */
+.dark body {
+  background: #1f1f1f;
+}
+.dark .title {
+  color: #e8e8e8;
+}
+.dark .calc-nums {
+  color: #e0e0e0;
+  background: #262626;
+  box-shadow:
+    8px 8px 14px rgba(0, 0, 0, 0.6),
+    -6px -6px 12px rgba(255, 255, 255, 0.03);
+}
+.dark .calc-nums:active {
+  box-shadow:
+    inset 6px 6px 12px rgba(0, 0, 0, 0.55),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.02);
+}
+.dark .result {
+  background: #262626;
+  box-shadow:
+    10px 10px 20px rgba(0, 0, 0, 0.6),
+    -10px -10px 20px rgba(255, 255, 255, 0.03);
+}
+.dark .result-des {
+  background: #262626;
+  box-shadow:
+    inset 12px 12px 24px rgba(0, 0, 0, 0.5),
+    inset -12px -12px 24px rgba(255, 255, 255, 0.03);
+}
+.dark .output {
+  color: #fff;
+}
+.dark .calculations {
+  color: #bdbdbd;
+}
+
+/* Switch component dark overrides (milder highlights) */
+.dark .switch-container {
+  background: #2b2b2b;
+  box-shadow:
+    inset -4px -4px 8px rgba(255, 255, 255, 0.02),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+.dark .switch .toggle {
+  background: linear-gradient(145deg, #2f2f2f, #232323);
+  box-shadow:
+    -3px -3px 6px rgba(255, 255, 255, 0.02),
+    3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+.dark .toggle-checkbox:checked + .switch .toggle {
+  left: 55px;
+  background: linear-gradient(145deg, #323232, #1f1f1f);
+  box-shadow:
+    -3px -3px 6px rgba(255, 255, 255, 0.02),
+    3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+.dark .toggle-checkbox:checked + .switch .led {
+  background: #ffbf00;
+  box-shadow: 0 0 10px 2px rgba(255, 191, 0, 0.25);
+}
